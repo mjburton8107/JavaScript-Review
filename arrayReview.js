@@ -41,7 +41,7 @@ function randomLooper (randomNumber, arr){
       if (arr.indexOf(randomNumber) !== -1){
           return true;
     }
-  } else false;
+  } false;
 }
 
 randomLooper(getRandomArbitrary(), randomArray);
@@ -52,12 +52,18 @@ randomLooper(getRandomArbitrary(), randomArray);
 
 //Create a copy of first and save it into second. Then, add 6 and 7 to the end of second. When you run this, first should be just [1,2,3,4,5] and second will be [1,2,3,4,5,6,7] if you created your copy correctly.
 var first = [1,2,3,4,5];
-var second;
+var second = [];
 
-  //code here
+for (var i = 0; i < first.length; i++){
+  second.push(first[i]);
+}
 
-alert(first) //[1,2,3,4,5];
-alert(second) //[1,2,3,4,5,6,7];
+second.push(6,7);
+
+console.log(first);
+console.log(second);
+// alert(first) //[1,2,3,4,5];
+// alert(second) //[1,2,3,4,5,6,7];
 
 
 
@@ -68,8 +74,17 @@ alert(second) //[1,2,3,4,5,6,7];
 //write a function called longest that takes in our sentence variable, and returns the longest word in that sentence.
 var sentence = "Dev Mountain is the best"
 
-  //code here
+function longest (str){
+  var wordArray = str.split(' ');
+  var longestWord = '';
+  for (var i = 0; i < wordArray.length; i++){
+    if(wordArray[i].length > longestWord.length){
+      longestWord = wordArray[i];
+    }
+  } return longestWord;
+}
 
+console.log(longest(sentence));
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
@@ -79,8 +94,14 @@ var sentence = "Dev Mountain is the best"
 var myPoem = 'What is a jQuery but a misunderstood object?'
 //What is a jQuery but a misunderstood object? --> What Is A JQuery But A Misunderstood Object?
 
-  //code here
-
+function capitalize(str){
+  var wordArray = str.split(' ');
+  var newArray = [];
+  for (var i = 0; i < wordArray.length; i++){
+    var capWord = wordArray[i].charAt(0).toUpperCase() + wordArray[i].slice(1, wordArray[i].length);
+    newArray.push(capWord);
+  } return newArray.join(' ');
+}
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -89,3 +110,13 @@ var myPoem = 'What is a jQuery but a misunderstood object?'
 
 var theOdyssey = "function expression or function declaration? Tis an obvious choice";
 //Write a function called vowelCounter that takes in a string (theOdyssey) and returns how many vowels are in that string.
+function vowelCounter(str){
+  var letterArr = str.split('');
+  var vowels = ['a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y'];
+  var vowelCount = 0;
+  for (var i = 0; i < letterArr.length; i++){
+    if(vowels.indexOf(letterArr[i]) !== -1){
+      vowelCount++;
+    }
+  } return vowelCount;
+}
