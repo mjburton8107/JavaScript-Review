@@ -44,33 +44,46 @@ var user = {
 
 //Above you're given a user object. Loop through the user object checking to make sure that each value is truthy. If it's not truthy, remove it from the object. hint: 'delete'.
 
-  //Your code here
+function looper (obj){
+  for (var key in obj){
+    if(!obj[key]){
+      delete obj[key];
+    }
+  } return obj;
+}
 
 //Once you get your truthy object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
 
-  //Your code here
+looper(user);
+user.name = 'Mike Burton';
+user.username = 'mjburton';
 
 //Now console.log your object and make sure it looks right.
 
-  //Your code here
+console.log(user);
 
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
 
-
 //create an empty object called methodCollection.
 
-  //Your code here
+var methodCollection = {};
 
 //Now add two methods (functions that are properties on objects) to your methodCollection object. One called 'alertHello' which alerts 'hello' and another method called logHello which logs 'hello' to the console.
 
-  //Your code here
+methodCollection.alertHello = function(){
+  alert('hello');
+}
+methodCollection.logHello = function(){
+  console.log('hello');
+}
 
 //Now call your alertHello and logHello methods.
 
-  //Your code here
+methodCollection.alertHello();
+methodCollection.logHello();
 
 
 
@@ -79,4 +92,21 @@ var user = {
 
 
 //write a function called voweler that accepts a string, and returns an object with the keys being all the vowels in that string, and the values being how many times that particular vowel was in the string.
-//voweler("This is a test") --> {i: 2, a: 1, e: 1};
+
+function voweler(str){
+  var letterArray = str.split('');
+  var vowels = ['a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y'];
+  var newObj = {};
+  for (var i = 0; i < letterArray.length; i++){
+    if(vowels.indexOf(letterArray[i]) !== -1){
+      if(!newObj[letterArray[i]]){
+        newObj[letterArray[i]] = 1;
+      } else {
+        newObj[letterArray[i]]++;
+      }
+    }
+  } return newObj;
+}
+
+
+voweler("This is a test") //{i: 2, a: 1, e: 1};
