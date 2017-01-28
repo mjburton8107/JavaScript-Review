@@ -15,7 +15,15 @@ function last(arr){
 //Loop through evenArray removing all values that aren't even
 var evenArray = [1,2,3,6,22,98,45,23,22,12];
 
-  //code here
+function loopArray (arr){
+  var newArray = [];
+  for (var i = 0; i < arr.length; i++){
+    if(arr[i] % 2 === 0){
+      newArray.push(arr[i]);
+    }
+  } return newArray;
+}
+
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -28,8 +36,15 @@ var getRandomArbitrary = function() {
 }
 var randomArray = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 
-  //code here
+function randomLooper (randomNumber, arr){
+    for (var i = 0; i < arr.length; i++){
+      if (arr.indexOf(randomNumber) !== -1){
+          return true;
+    }
+  } else false;
+}
 
+randomLooper(getRandomArbitrary(), randomArray);
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
