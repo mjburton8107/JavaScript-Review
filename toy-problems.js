@@ -8,6 +8,12 @@ plusOneSum([1, 2, 3, 4]); // 14
 
 */
 
+function plusOneSum(arr){
+  var total = 0;
+  for (var i = 0; i < arr.length; i++){
+    total += arr[i]+1;
+  } return total;
+}
 
 
 /*
@@ -18,8 +24,11 @@ flatten([1, 2, [3, [4], 5, 6], 7]) // [1, 2, 3, 4, 5, 6, 7]
 
 */
 
-
-
+function flatten (arr){
+  arr.reduce(function(a,b){
+     return a.concat(b);
+  }, []);
+}
 /*
 
 Given an array [a1, a2, ..., aN, b1, b2, ..., bN, c1, c2, ..., cN] convert it to [a1, b1, c1, a2, b2, c2, ..., aN, bN, cN]
