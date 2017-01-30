@@ -22,8 +22,16 @@ Once completed, add a second arguments that allows the function to be executed N
 */
 
 
-var firstFunc = function (n, secondFunc(){
-  function thirdFunc(){
-     secondFunc();
+function test (cb, n){
+  var counter = 0;
+  function(){
+    if(counter < n){
+      counter++;
+      cb();
+    } 
   }
-});
+}
+
+test(function(){
+  console.log('keep going');
+}, 4);
