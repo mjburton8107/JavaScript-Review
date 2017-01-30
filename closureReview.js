@@ -24,14 +24,16 @@ Once completed, add a second arguments that allows the function to be executed N
 
 function test (cb, n){
   var counter = 0;
-  function(){
+  return function(){
     if(counter < n){
       counter++;
       cb();
-    } 
+    } else if (counter >= n){
+      console.log('STAHHP');
+    }
   }
 }
 
-test(function(){
+var result = test(function(){
   console.log('keep going');
 }, 4);
