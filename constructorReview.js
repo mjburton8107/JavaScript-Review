@@ -49,13 +49,13 @@ Animal.eat = function(){
 
 //At this point, if we wanted to add something to every istance of person could we?
 
-  //Yes or no? and why or why not?
+  //Yes or no? and why or why not? No, you would have had to add it in the original maker pattern. We already have a return built in and the parameters have been set
 
 
 
 /*
   1) What happens when you use the 'new' keyword to call a Constructor function? It creates a new object
   2) What's a good way to describe the keyword 'this' - it's like a pronoun to describe which object the action is acting on
-  3) Can a normal function which creates an object and then returns that object use the prototype?
+  3) Can a normal function which creates an object and then returns that object use the prototype? yes
   4) What happens if you forget to use 'new' when calling a constructor? you'll be adding calling your constructor function without specifying this and thus adding to the global/window object
 */
