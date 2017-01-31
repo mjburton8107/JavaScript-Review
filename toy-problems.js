@@ -23,11 +23,9 @@ Write a function that accepts a multi dimensional array and returns a flattened 
 flatten([1, 2, [3, [4], 5, 6], 7]) // [1, 2, 3, 4, 5, 6, 7]
 
 */
-
 function flatten (arr){
-  arr.reduce(function(a,b){
-     return a.concat(b);
-  }, []);
+  var newArray = [].concat.apply([], arr);
+  return newArray;
 }
 /*
 
@@ -42,7 +40,13 @@ There is an array of non-negative integers. A second array is formed by shufflin
 
 */
 
-
+function compare (arr1, arr2){
+  for (var i = 0; i < arr1.length; i++){
+    if (arr2.indexOf(arr1[i]) === -1){
+      return arr1[i];
+    }
+  }
+}
 
 
 
@@ -110,6 +114,8 @@ console.log(sum(2)(3));  // Outputs 5
 
 */
 
-function sum (a, b){
-  return a + b;
+function sum (arr){
+  arr.reduce(function(a, b){
+    return a + b;
+  }, 0);
 }
