@@ -57,7 +57,15 @@ longestWords("I gave a present to my parents") // ["present", "parents"]
 longestWords("Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo") // ["buffalo"] or ["Buffalo"]
 
 */
-
+function longestWords (str){
+  var myWords = str.split(' ');
+  var longestWord = '';
+  for (var i = 0; i < myWords.length; i++){
+    if(myWords[i].length > longestWord.length){
+      longestWord = myWords[i];
+    }
+  } return longestWord;
+}
 
 /*
 
@@ -67,6 +75,16 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 
 */
 
+function multipleSum (num){
+  var sum = 0;
+  for (var i = 0; i < num; i++){
+    if(i % 3 === 0){
+      sum += i;
+    } else if (i % 5 === 0){
+      sum += i;
+    }
+  } return sum
+}
 
 /*
 
@@ -74,7 +92,15 @@ Remove duplicate characters in a given string keeping only the first occurrences
 
 */
 
-
+function duplicates (str){
+  var letters = str.split('');
+  var newArray = [];
+  for (var i = 0; i < letters.length; i++){
+    if (newArray.indexOf(letters[i]) === -1){
+      newArray.push(letters[i]);
+    }
+  } return newArray.join('');
+}
 
 /*
 Write a sum method which will work properly when invoked using either syntax below.
@@ -83,3 +109,7 @@ console.log(sum(2,3));   // Outputs 5
 console.log(sum(2)(3));  // Outputs 5
 
 */
+
+function sum (a, b){
+  return a + b;
+}
