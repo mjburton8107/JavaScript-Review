@@ -32,11 +32,19 @@ function flatten (arr){
 Given an array [a1, a2, ..., aN, b1, b2, ..., bN, c1, c2, ..., cN] convert it to [a1, b1, c1, a2, b2, c2, ..., aN, bN, cN]
 
 */
+var nums = /[^0-9]/g;
 
-function sorter (arr){
-  var newArray = arr.sort();
-  return newArray;
+function sorter (a, b){
+  var aN = parseInt(a.replace(nums, ""),10);
+  var bN = parseInt(b.replace(nums, ""), 10);
+  if (aN === bN){
+    return 0;
+  } else if (aN > bN){
+    return 1;
+  } else return -1
 }
+
+['a1', 'a2', 'b1', 'b2', 'c1', 'c2'].sort(sorter);
 
 /*
 
@@ -121,15 +129,15 @@ console.log(sum(2)(3));  // Outputs 5
 function sum (x, y){
   if (y !== undefined){
     return x + y;
-  } else return function (y){
+  } else return (function(y){
     return x + y;
-  }
+  })
 }
 
 function sum (x, y){
   if(arguments.length == 2){
     return x + y;
-  } else return function(y){
+  } else return (function(y){
     return x + y;
-  }
+  })
 }
