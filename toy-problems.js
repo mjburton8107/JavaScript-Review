@@ -33,6 +33,10 @@ Given an array [a1, a2, ..., aN, b1, b2, ..., bN, c1, c2, ..., cN] convert it to
 
 */
 
+function sorter (arr){
+  var newArray = arr.sort();
+  return newArray;
+}
 
 /*
 
@@ -65,7 +69,7 @@ function longestWords (str){
   var myWords = str.split(' ');
   var longestWord = '';
   for (var i = 0; i < myWords.length; i++){
-    if(myWords[i].length > longestWord.length){
+    if(myWords[i].length >= longestWord.length){
       longestWord = myWords[i];
     }
   } return longestWord;
