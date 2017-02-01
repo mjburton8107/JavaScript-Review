@@ -118,8 +118,10 @@ console.log(sum(2)(3));  // Outputs 5
 
 */
 
-function sum (arr){
-  arr.reduce(function(a, b){
-    return a + b;
-  }, 0);
+function sum (x, y){
+  if (y !== undefined){
+    return x + y;
+  } else return function (y){
+    return x + y;
+  }
 }
