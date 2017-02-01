@@ -125,3 +125,11 @@ function sum (x, y){
     return x + y;
   }
 }
+
+function sum (x, y){
+  if(arguments.length == 2){
+    return x + y;
+  } else return function(y){
+    return x + y;
+  }
+}
